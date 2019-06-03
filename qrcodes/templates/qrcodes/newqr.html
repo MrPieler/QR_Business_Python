@@ -1,0 +1,61 @@
+<form action="{% url 'qrcodes:newqr'%}" method="post" class="form">
+    {% csrf_token %}
+
+    <div style="float:left;">
+        <br>
+        {% if user.is_authenticated %}
+            <a href="{% url 'qrcodes:new_web_qr' %}">Create new Web QR-Code</a>
+        {% endif %}
+        <ul>
+            <br>
+            <label>Web Qrcodes</label>
+            {% for qrcode in qrcodes_web  %}
+                {% if not qrcode.name == "" %}
+                    <li>
+                        <a href="{% url 'qrcodes:details' 'web' qrcode.qr_id %}">{{ qrcode.name }}</a>
+                    </li>
+                {% endif %}
+            {% endfor  %}
+        </ul>
+    </div>
+
+
+    <div style="float:left;">
+        <br>
+        {% if user.is_authenticated %}
+            <a href="{% url 'qrcodes:new_wifi_qr' %}">Create new WiFi QR-Code</a>
+        {% endif %}
+        <ul>
+            <br>
+            <label>WiFi Qrcodes</label>
+            {% for qrcode in qrcodes_wifi  %}
+                {% if not qrcode.name == "" %}
+                    <li>
+                        <a href="{% url 'qrcodes:details' 'wifi' qrcode.qr_id %}">{{ qrcode.name }}</a>
+                    </li>
+                {% endif %}
+            {% endfor  %}
+        </ul>
+    </div>
+
+
+    <div style="float:left;">
+        <br>
+        {% if user.is_authenticated %}
+            <a href="{% url 'qrcodes:new_vcard_qr' %}">Create new Vcard QR-Code</a>
+        {% endif %}
+        <ul>
+            <br>
+            <label>Vcard Qrcodes</label>
+            {% for qrcode in qrcodes_vcard  %}
+                {% if not qrcode.name == "" %}
+                    <li>
+                        <a href="{% url 'qrcodes:details' 'vcard' qrcode.qr_id %}">{{ qrcode.name }}</a>
+                    </li>
+                {% endif %}
+            {% endfor  %}
+        </ul>
+    </div>
+</form>
+
+

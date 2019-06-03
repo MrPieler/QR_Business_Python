@@ -1,0 +1,12 @@
+<form action="{% url 'qrcodes:details' type qrcode.qr_id %}" method="POST">
+    {% csrf_token %}
+    <label for="nameId">Enter QR Name</label>
+    <br>
+    <input type="text" id="nameId" name="name" value={{qrcode.name}}>
+    <br>
+    <label for="urlId">Enter Url</label>
+    <br>
+    <input type="text" id="urlId" name="url" value={{qrcode.url}}>
+    <br>
+    <button >Create QR</button>
+</form>

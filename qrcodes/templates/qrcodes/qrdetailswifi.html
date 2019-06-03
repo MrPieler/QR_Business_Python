@@ -1,0 +1,20 @@
+<form action="{% url 'qrcodes:details' type qrcode.qr_id %}" method="POST">
+    {% csrf_token %}
+    <label for="nameId">Enter QR Name</label>
+    <br>
+    <input type="text" id="nameId" name="name" value={{qrcode.name}}>
+    <br>
+    <label for="ssid">Enter SSID</label>
+    <br>
+    <input type="text" id="ssid" name="wifiname" value={{qrcode.wifiname}}>
+    <br>
+    <label for="passwordId">Enter WiFi password</label>
+    <br>
+    <input type="text" id="passwardId" name="password" value={{qrcode.wifipassword}}>
+    <br>
+    <label for="typeId">Enter WiFi auth type</label>
+    <br>
+    <input type="text" id="typeId" name="type" value={{qrcode.wifitype}}>
+    
+    <button >Create QR</button>
+</form>
