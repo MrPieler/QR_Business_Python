@@ -2,11 +2,11 @@
     {% csrf_token %}
     <label for="nameId">Enter QR Name</label>
     <br>
-    <input type="text" id="nameId" name="name" value={{qrcode.name}}>
+    <input type="text" id="nameId" name="name" value={{qrcode.name}}  required}>
     <br>
     <label for="ssid">Enter SSID</label>
     <br>
-    <input type="text" id="ssid" name="wifiname" value={{qrcode.wifiname}}>
+    <input type="text" id="ssid" name="wifiname" value={{qrcode.wifiname}}  required}>
     <br>
     <label for="passwordId">Enter WiFi password</label>
     <br>
@@ -14,7 +14,9 @@
     <br>
     <label for="typeId">Enter WiFi auth type</label>
     <br>
-    <input type="text" id="typeId" name="type" value={{qrcode.wifitype}}>
+    <input type="text" id="typeId" name="type" value={{qrcode.wifitype}}  required}>
     
-    <button >Create QR</button>
+    <button >Edit QR</button>
 </form>
+
+<img src="data:image/png;base64, {{qr_img}}" height="500" width="500"">

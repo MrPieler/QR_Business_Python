@@ -1,13 +1,13 @@
 <form action="{% url 'qrcodes:new_wifi_qr' %}" method="POST">
         {% csrf_token %}
         <label for="nameId">Enter QR Name</label>
-        <input type="text" id="nameId" name="name"> 
+        <input type="text" id="nameId" name="name" required> 
         <label for="wifiId">Enter Wifi SSID(NAME)</label>
-        <input type="text" id="wifiId" name="wifiname"> 
+        <input type="text" id="wifiId" name="wifiname" required> 
         <label for="passwordId">Enter Password</label>
         <input type="text" id="passwordId" name="password"> 
         <label for="typeId">Enter Type (WPA)</label>
-        <input type="text" id="typeId" name="type"> 
+        <input type="text" id="typeId" name="type" required> 
 
         <button >Create QR</button>
     </form>

@@ -1,13 +1,13 @@
 <form action="{% url 'qrcodes:new_vcard_qr' %}" method="POST">
         {% csrf_token %}
         <label for="nameId">Enter QR Name</label>
-        <input type="text" id="nameId" name="name"> 
+        <input type="text" id="nameId" name="name"  required> 
         <label for="text">Enter First Name here</label>
         <input type="text" name="firstname"> 
         <label for="text">Enter Last Name here</label>
         <input type="text" name="lastname"> 
         <label for="text">Enter Number here</label>
-        <input type="text" name="phone"> 
+        <input type="text" name="phone" required> 
         <label for="text">Enter E-mail here</label>
         <input type="text" name="email"> 
 

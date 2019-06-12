@@ -7,6 +7,4 @@
     <button type="submit">Login</button>
 </form>
 
-{% if error  %}
-    {{ error  }}
-{% endif  %}
+<a href="{% url 'login:signup' %}">Sign up</a>
